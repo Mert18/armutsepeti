@@ -1,0 +1,10 @@
+/* FOOTER */
+
+.footer {
+  height: 12vh;
+  background: var(--red);
+  color: var(--white2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

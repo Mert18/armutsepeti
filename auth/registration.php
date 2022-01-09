@@ -20,6 +20,22 @@
     $password = stripslashes($_REQUEST["password"]);
     $password = mysqli_real_escape_string($conn, $password);
     $trn_date = date("Y-m-d H:i:s");
+
+    $sql = "SELECT * FROM users";
+    $checkresult = $conn->query($sql);
+    $flag = 0;
+
+    while ($row = $checkresult->fetch_assoc()) {
+      if ($row['email'] === $email || $row['username'] === $username) {
+        $flag = 1;
+      }
+    }
+
+    if ($flag) {
+      header('location:error.php');
+      exit();
+    }
+
     $query =
       "INSERT into `users` (username, password, email, trn_date)
 VALUES ('$username', '" .
@@ -27,9 +43,7 @@ VALUES ('$username', '" .
       "', '$email', '$trn_date')";
     $result = mysqli_query($conn, $query);
     if ($result) {
-      echo "<div class='form'>
-<h3>You are registered successfully.</h3>
-<br/>Click here to <a href='login.php'>Login</a></div>";
+      header('location: login.php');
     }
   } else {
   ?>

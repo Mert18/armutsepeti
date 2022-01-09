@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.table {
+  width: 60vw;
+  border-spacing: 2rem;
+}
+
+.table tr {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.table tr th {
+  color: var(--red);
+  font-size: 0.8rem;
+}
+
+.table tr td img {
+  border-top-right-radius: 1rem;
+}
+
+.table tr td a {
+  text-decoration: none;
+  transition: all 0.4s ease;
+  color: var(--red);
+}
+
+.table tr td a:hover {
+  transition: all 0.4s ease;
+  color: var(--red2);
+}
+
+.result {
+  font-size: 1.4rem;
+  margin: 2rem;
+}
+
+.emptycart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--red);
+  font-size: 1.8rem;
+  height: 80vh;
+}

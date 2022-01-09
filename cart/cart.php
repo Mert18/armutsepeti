@@ -13,6 +13,7 @@ include("../auth/db.php");
   <meta charset="utf-8" />
   <title>Yemek Sepeti - Cart</title>
   <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/cart.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
 
@@ -21,6 +22,7 @@ include("../auth/db.php");
   <?php
   include('../layout/header.php');
   ?>
+
   <div class="container">
     <?php
     if ($_SESSION['cart']) {
@@ -32,8 +34,10 @@ include("../auth/db.php");
         <table class="table">
           <tr>
             <th>S.NO</th>
-            <th>Item Name</th>
+            <th>Food Image</th>
+            <th>Food Name</th>
             <th>Price</th>
+            <th>Remove</th>
           </tr>
           <?php
           $total = 0;
@@ -47,9 +51,9 @@ include("../auth/db.php");
               <tr>
                 <td><?php echo $i; ?></td>
                 <td><img src="../foods/<?php echo $r['image'] ?>" width="128px" /></td>
-                <td><a href="/armutsepeti/cart/delcart.php?remove=<?php echo $key; ?>">Remove</a> <?php echo $r['name']; ?></td>
-                <td><?php echo $key; ?></td>
-                <td>$<?php echo $r['price']; ?></td>
+                <td><?php echo $r['name']; ?></td>
+                <td><?php echo $r['price']; ?>&#8378;</td>
+                <td><a href="/armutsepeti/cart/delcart.php?remove=<?php echo $key; ?>">Remove</a></td>
               </tr>
             <?php
               $total = $total + $r['price'];
@@ -57,11 +61,13 @@ include("../auth/db.php");
             }
           } else {
             ?>
-            <p>Cart is empty.</p>
+            <div class="empty">
+              <p>Cart is empty.</p>
+            </div>
           <?php }  ?>
-          <tr>
+          <tr class="result">
             <td><strong>Total Price</strong></td>
-            <td><strong>$<?php echo $total; ?></strong></td>
+            <td><strong><?php echo $total; ?>&#8378;</strong></td>
             <td><a href="/armutsepeti/order/placeorder.php?total=<?php echo $total;  ?>" class="checkout">Checkout</a></td>
           </tr>
         </table>
@@ -79,11 +85,11 @@ include("../auth/db.php");
     <?php
     }
     ?>
+  </div>
 
-    <?php
-    include('../layout/footer.php');
-    ?>
-
+  <?php
+  include('../layout/footer.php');
+  ?>
 
 
 </body>

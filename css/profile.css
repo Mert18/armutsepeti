@@ -1,0 +1,42 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.profileinfo {
+  margin-bottom: 5rem;
+  color: var(--red);
+}
+
+.orderswrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.orders {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.order {
+  display: flex;
+  align-items: center;
+}
+
+.small {
+  font-size: 0.7rem;
+  color: var(--red);
+}
+
+.ordergroup {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
+  font-size: 1.4rem;
+}

@@ -14,15 +14,39 @@ $_SESSION['cart'] = [];
   <meta charset="utf-8" />
   <title>Yemek Sepeti - Order Success</title>
   <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/components.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
 
-<body>
 
-  <div class="popupsuccess">
-    <h2>Success</h2>
-    <p>Your order placed successfully. <a href="/armutsepeti/index.php">Return Home</a></p>
+<body>
+  <?php
+  include('../layout/header.php');
+  ?>
+  <div class="app">
+
+    <div class="popupsuccess">
+      <div class="popupsuccesslogo">
+        <img src="../assets/success.png" width="64px" alt="success" />
+      </div>
+      <div class="popupsuccessright">
+        <div class="popupsuccessrighttop">
+          <h2>Success</h2>
+        </div>
+        <div class="popupsuccessrightbottom">
+          <p>Your order has been placed.</p>
+          <div class="buttons">
+            <button> <a href="/armutsepeti/index.php">Go Homepage</a></button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
   </div>
+  <?php
+  include('../layout/footer.php');
+  ?>
 
 </body>
 
