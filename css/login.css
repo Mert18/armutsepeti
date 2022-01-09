@@ -1,0 +1,71 @@
+/* LOGIN */
+.loginpage {
+  min-height: 98vh;
+  width: 100%;
+  background: var(--white2);
+}
+
+.formwrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 98vh;
+}
+
+.login {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-top-right-radius: 2rem;
+  border: 1px solid var(--red);
+}
+
+.formlogowrapper {
+  padding: 1rem 0rem;
+}
+
+.login input {
+  height: 6vh;
+  font-size: 1.4rem;
+  margin: 0.4rem 0rem;
+  border: 1px solid var(--red);
+  padding: 0.4rem;
+  outline: none;
+  color: var(--red);
+  transition: all 0.4s ease;
+  font-weight: 700;
+  background: var(--white2);
+}
+
+.login input[type="submit"]:hover {
+  background: var(--red);
+  color: var(--white2);
+  cursor: pointer;
+}
+
+.login input:hover {
+  transition: all 0.4s ease;
+}
+
+.login input::placeholder {
+  color: var(--red);
+}
+
+.login-title {
+  color: var(--red);
+  padding: 1rem 0rem;
+}
+
+.loginregister {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.loginregister a {
+  text-decoration: none;
+  color: var(--red);
+}

@@ -1,5 +1,5 @@
 <?php
-require('db.php');
+require("db.php");
 include("auth.php");
 ?>
 
@@ -9,17 +9,17 @@ include("auth.php");
 <head>
   <meta charset="utf-8">
   <title>ArmutSepeti | Profile</title>
-  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="/armutsepeti/css/style.css" />
 </head>
 
 <body>
   <?php
-  include('header.php')
+  include('../layout/header.php')
   ?>
 
 
   <?php
-  include('footer.php')
+  include('../layout/footer.php')
   ?>
 
 </body>

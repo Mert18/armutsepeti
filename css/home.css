@@ -1,0 +1,99 @@
+/* HOME PAGE */
+.main {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "foods aside";
+  background: var(--white2);
+  min-height: 100vh;
+}
+
+@media (max-width: 800px) {
+  .main {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "foods"
+      "aside";
+  }
+}
+
+.foods {
+  grid-area: foods;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem;
+}
+
+.food {
+  max-width: 100%;
+  margin: 1rem;
+}
+
+.food__btm {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--red);
+  color: var(--white2);
+  padding: 0.5rem;
+  height: 6vh;
+}
+
+.food__btm button {
+  padding: 0.8rem;
+  background: var(--red);
+  border: none;
+  outline: none;
+  transition: all 0.4s ease;
+  color: var(--white2);
+  border: 1px solid white;
+}
+
+.food__btm a {
+  color: var(--white2);
+  text-decoration: none;
+}
+
+.food__btm button:hover {
+  transition: all 0.4s ease;
+  cursor: pointer;
+  background: var(--red2);
+}
+
+.food__img img {
+  border-top-right-radius: 2rem;
+}
+
+.aside {
+  grid-area: aside;
+  margin: 2rem;
+}
+
+.foodoftheday {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--red);
+}
+
+.foodoftheday img {
+  border-radius: 50%;
+}
+
+.foodoftheday a {
+  text-decoration: none;
+  color: var(--red);
+  transition: all 0.4s ease;
+}
+
+.foodoftheday a:hover {
+  color: var(--black);
+  transition: all 0.4s ease;
+}
+
+.foodoftheday > * {
+  margin-bottom: 2rem;
+}

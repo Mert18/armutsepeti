@@ -1,11 +1,11 @@
 <?php
-include("auth.php");
-include("db.php");
+session_start();
+
+include("../auth/auth.php");
+include("../auth/db.php");
 
 if (isset($_GET['id']))
   $foodId = $_GET['id'];
-// $sql = "SELECT * FROM products WHERE id = '$foodId'";
-// $result = $conn->query($sql);
 
 $result = mysqli_query(
   $conn,
@@ -14,10 +14,13 @@ $result = mysqli_query(
 
 $row = mysqli_fetch_assoc($result);
 $name = $row['name'];
+$id = $row['id'];
 $code = $row['code'];
 $price = $row['price'];
 $image = $row['image'];
 $description = $row['description'];
+
+
 ?>
 
 <!DOCTYPE html>
@@ -25,48 +28,45 @@ $description = $row['description'];
 
 <head>
   <meta charset="utf-8" />
-  <title>Yemek Sepeti</title>
-  <link rel="stylesheet" href="./css/style.css" />
+  <title>Yemek Sepeti - Food</title>
+  <link rel="stylesheet" href="/armutsepeti/css/style.css" />
+  <link rel="stylesheet" href="/armutsepeti/css/food.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
 
 <body>
   <?php
-  include('header.php');
+  include('../layout/header.php');
   ?>
   <main class="foodpage">
     <div class="foodwrapper">
       <div class="singlefood">
         <div class="foodmid">
           <div class="foodmidimg">
-            <img src="./foods/<?php echo $image ?>" alt="<?php echo $name ?>" width="100%" />
+            <img src="../foods/<?php echo $image ?>" alt="<?php echo $name ?>" width="100%" />
           </div>
           <div class="foodmidexp">
-            <div class="foodmidexptop">
+            <div class="group">
               <span class="explanator">Food Name</span>
-              <h1><?php echo $name ?></h1>
+              <p><?php echo $name ?></p>
             </div>
             <div class="group">
               <span class="explanator">Description</span>
               <p><?php echo $description  ?></p>
             </div>
-            <div class="inputgroup">
-              <span class="explanator">Quantity</span>
-              <input min="1" max="10" type="number" name="quantity" id="quantity" value=1 />
-            </div>
-            <div class="price">
+            <div class="group">
               <span class="explanator">Total Price</span>
-              <h3><?php echo $price ?> &#8378; * Quantity</h3>
+              <p><?php echo $price ?> &#8378;</p>
             </div>
             <div class="addtocart">
-              <button>ORDER</button>
+              <button><a href="../cart/addtocart.php?id=<?php echo $foodId ?>">ORDER</a></button>
             </div>
           </div>
         </div>
       </div>
     </div>
   </main>
-  <?php include('footer.php') ?>
+  <?php include('../layout/footer.php') ?>
 
 </body>
 
