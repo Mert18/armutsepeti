@@ -49,13 +49,6 @@ include("./auth/db.php");
       }
       ?>
     </div>
-    <div class="aside">
-      <div class="foodoftheday">
-        <h2>Food of the Day</h2>
-        <img src="foods/pizza.jpeg" width="256px" alt="pizza image" />
-        <a href="/">Buy Food of the Day with 25% discount!</a>
-      </div>
-    </div>
   </main>
 
   <?php
